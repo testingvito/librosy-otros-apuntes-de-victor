@@ -1,0 +1,29 @@
+create table Asignaturas (id bigint primary key auto_increment,semestre int, 
+                        nombre varchar(50), fReg timestamp, id_car bigint)
+
+
+create table carrera (id bigint primary key auto_increment, nombre varchar(50))
+
+ALTER TABLE Asignaturas ADD FOREIGN KEY (id_car) REFERENCES carrera(id);
+
+insert into carrera (nombre) values ('Negocios y finanzas');
+insert into carrera (nombre) values ('Redes y telecomunicaciones');
+insert into carrera (nombre) values ('ing en informatica');
+insert into carrera (nombre) values ('Programación en .net');
+insert into carrera (nombre) values ('diseño');
+
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('etica Laboral',5,now(),1;
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('gestión de negocios',5,now(),1);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('Redes basico',2,now(),2);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('Redes avanzado',5,now(),2);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('POO EN java',2,now(),3);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('POO EN .net',3,now(),3);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('POO EN java 2',2,now(),3);
+insert into Asignaturas (nombre,semestre,fReg,id_car) values ('Base de datos',5,now(),3);
+
+select * from Asignaturas
+select * from carrera
+
+select a.id_car,a.semestre,a.nombre,a.fReg,a.id_car,c.id,c.nombre
+ from Asignaturas a inner join carrera  c on 
+c.id = a.id_car
